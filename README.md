@@ -77,3 +77,5 @@ An elevator pitch for [Crystal](http://crystal-lang.org) might be that it is bas
 Where's all the Code?
 ---------------------
 There's no particular virtue in writing *more code*, even though the brass at IBM thought that that was a good way to determine how to pay Microsoft, back in the day when the latter was doing the bidding of the former.  The virtue is in writing *the right code*, which solves the problem, even if it is a small problem.  (Sometimes there's value in simply proving that something can be done!)
+=======
+
