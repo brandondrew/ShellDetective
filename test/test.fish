@@ -1,4 +1,8 @@
 #!/usr/bin/env fish
+echo (dirname (status -f))
+### guarantee operations happen in proper directory ###
+pushd (dirname (status -f)) > /dev/null
+
 
 ### colors & styling: ###
 set red   "\033[31m"
@@ -23,3 +27,19 @@ end
 echo "      Expected: $crystal_ppid"
 echo "      Actual:   $shell_id"
 
+
+########################################################################
+### test shell_name ###
+set description "Crystal will correctly get the name of this file"
+set expected "test.fish"
+set actual ("../shell_name")
+
+if test "$expected" = "$actual"
+  echo -e "$green""PASS: $description$clear"
+else
+  echo -e "$red""FAIL: $description$clear"
+end
+echo "      Expected: $expected"
+echo "      Actual:   $actual"
+
+popd > /dev/null

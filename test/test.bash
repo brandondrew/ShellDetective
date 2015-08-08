@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+echo ${BASH_SOURCE[0]}
 ### guarantee operations happen in proper directory ###
 pushd "$( dirname "${BASH_SOURCE[0]}" )" > /dev/null
 
