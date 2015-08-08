@@ -8,9 +8,6 @@ underline="\033[4;6m"
 clear="\033[0m"
 
 
-### compile all *.cr files ###
-crystal build *.cr  # --release
-
 # ksh allows () OR "function" keyword, but not both!
 function fail {
   description="$1"
