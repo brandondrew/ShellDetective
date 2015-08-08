@@ -1,0 +1,34 @@
+
+### colors & styling: ###
+cyan="\033[36m"
+yellow="\033[33m"
+red="\033[31m"
+green="\033[32m"
+underline="\033[4;6m"
+clear="\033[0m"
+
+
+### compile all *.cr files ###
+crystal build *.cr  # --release
+
+# ksh allows () OR "function" keyword, but not both!
+function fail {
+  description="$1"
+  echo -e "${red}FAIL: ${description}${clear}"
+}
+function pass {
+  description="$1"
+  echo -e "${green}PASS: ${description}${clear}"
+}
+function assert_equal {
+  actual="$1"
+  expected="$2"
+  description="$3"
+  if [[ "$actual" = "$expected" ]]; then
+    pass "${description}"
+  else
+    fail "${description}"
+  fi
+  echo "      Expected: $expected"
+  echo "      Actual:   $actual"
+}
