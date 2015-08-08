@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
-echo (dirname (status -f))
+
 ### guarantee operations happen in proper directory ###
-pushd (dirname (status -f)) > /dev/null
+cd (dirname (status -f)) > /dev/null
 
 
 ### colors & styling: ###
@@ -41,5 +41,3 @@ else
 end
 echo "      Expected: $expected"
 echo "      Actual:   $actual"
-
-popd > /dev/null

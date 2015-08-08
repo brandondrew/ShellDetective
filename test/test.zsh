@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 ### guarantee operations happen in proper directory ###
-pushd "$( dirname "${(%):-%x}" )" > /dev/null
+cd "$( dirname "${(%):-%x}" )" > /dev/null
 
 
 ### load our testing functions ###
@@ -24,6 +24,3 @@ description="Crystal will correctly get the name of this file"
 
 assert_equal "$expected" "$actual" "$description"
 
-
-### return to previous directory
-popd > /dev/null

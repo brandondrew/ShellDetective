@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-echo ${BASH_SOURCE[0]}
+
 ### guarantee operations happen in proper directory ###
-pushd "$( dirname "${BASH_SOURCE[0]}" )" > /dev/null
+cd "$( dirname "${BASH_SOURCE[0]}" )" > /dev/null
 
 
 ### load our testing functions ###
@@ -13,6 +13,3 @@ source "./test_helper"
 
 assert_equal "$crystal_ppid" "$shell_id" "$description"
 
-
-### return to previous directory
-popd > /dev/null

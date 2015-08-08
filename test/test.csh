@@ -3,6 +3,7 @@
 ### guarantee operations happen in proper directory ###
 cd `dirname $0` > /dev/null
 
+
 ### compile all *.cr files ###
 crystal build *.cr  # --release
 
