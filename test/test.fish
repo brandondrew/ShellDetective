@@ -9,9 +9,6 @@ set red   "\033[31m"
 set green "\033[32m"
 set clear "\033[0m"
 
-### compile all *.cr files ###
-crystal build *.cr  # --release
-
 
 ########################################################################
 ### test ppid ###

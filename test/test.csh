@@ -4,9 +4,6 @@
 cd `dirname $0` > /dev/null
 
 
-### compile all *.cr files ###
-crystal build *.cr  # --release
-
 # we're keepin' it simple for C shell!
 # csh has NO FUNCTIONS!  So there'll be NO test_helper!
 echo  "##########################################################"
