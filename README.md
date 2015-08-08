@@ -32,7 +32,9 @@ or in one fell swoop:
       $testfile
     done
 
+The test files should be executable already&mdash;Git preserves the executable bit.  But just in case for some reason they are not, you can make them so, of course, from the root of the project:
 
+    chmod u+x test/test.*
 
 Installation
 ------------
@@ -53,7 +55,7 @@ Roadmap
 * Make it easier to install
   + Homebrew?
   + Crystal shards?
-  + Jester script? ;)
+  + Jester? ;)
 * Add new features from the secret documentation (can you find it?) :D
 
 TL;DR
@@ -67,3 +69,7 @@ The key insights in making it possible to determine the running shell is the fac
 2. the one thing they do consistently is call outside programs
 
 This leads me to the conclusion that rather than writing shell functions that I can use from multiple shells, it would be tremendously easier in some cases to simply write individual utilities and put them in my `~/bin` directory.  There may be a serious of questions to answer to decide which set of trade-offs are preferable, but this is at least an option to consider.  Previously I've avoided simply writing everything in Ruby because this creates its own set of problems&mdash;sysadmins that won't install `zsh` probably won't install Ruby either&mdash;and Travelling Ruby is fairly new.  Crystal, however, should make all of this a non-issue.  We'll see...
+
+What's Crystal?
+---------------
+An elevator pitch for [Crystal](http://crystal-lang.org) might be that it is basically "compiled Ruby".  That description is not entirely accurate, but it gives you a good idea why it has a strong appeal.  There are some changes to the syntax and semantics of the language to support compilation and related needs, but its creators have worked remarkably hard to give it the flexibilty of a dynamically-typed interpreted langauge, even though you get the speed of a compiled language.  They also value the elegance and readability of Ruby and have worked hard to preserve (and even improve upon) them.  If you know and like Ruby, then you'll be able to immediately read and write Crystal, and only have to learn a few key differences before you can dive in head-first.  The main advantage to me of being able to compile my Ruby code (well, my Ruby-like code) is that I don't have to worry at all about what version a user has installed, or *if* they have any version of Ruby installed.  This is essentially the problem that [Traveling Ruby](http://phusion.github.io/traveling-ruby/) solves, but if you don't need any gems that have not been rewritten for Crystal, then Crystal also makes a great option, and one that strikes me as a lot simpler.
