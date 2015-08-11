@@ -96,7 +96,7 @@ If it does not work as it is, please let me know, and let me know what platform 
 
 Contributing
 ------------
-If you find any cases where this fails, ***please*** [bring it to my attention](https://github.com/brandondrew/ShellDetector/issues/new)
+If you find any cases where this fails, ***please*** [bring it to my attention](https://github.com/brandondrew/ShellDetective/issues/new)
 
 Feature requests and pull requests are welcome as well.
 
