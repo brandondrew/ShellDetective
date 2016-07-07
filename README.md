@@ -117,10 +117,15 @@ The purpose behind this project is to reliably and unambiguously determine which
 Lessons Learned
 ---------------
 The key insights in making it possible to determine the running shell is the fact that
-1. shells do almost nothing in a universally consistent way (unless you take a small subset of shells)
-2. the one thing they do consistently is call outside programs
 
-This leads me to the conclusion that rather than writing shell functions that I can use from multiple shells, it would be tremendously easier in some cases to simply write individual utilities and put them in my `~/bin` directory.  There may be a serious of questions to answer to decide which set of trade-offs are preferable, but this is at least an option to consider.  Previously I've avoided simply writing everything in Ruby because this creates its own set of problems&mdash;sysadmins that won't install `zsh` probably won't install Ruby either&mdash;and Travelling Ruby is fairly new.  Crystal, however, should make all of this a non-issue.  We'll see...
+1. shells do _almost_ nothing in a universally consistent way (unless you take a small subset of shells)
+2. the one thing they do consistently is call outside programs
+3. an external (compiled) program _can_ access information about the shell that called it
+
+This leads me to the conclusion that rather than writing shell functions that I can use from multiple shells, it would be tremendously easier in some cases to simply write individual utilities and put them in my `~/bin` directory.  There may be a serious of questions to answer to decide which set of trade-offs are preferable, but this is at least an option to consider.  Previously I've avoided simply writing everything in Ruby because this creates its own set of problems&mdash;sysadmins that won't install `zsh` probably won't install Ruby either&mdash;and Travelling Ruby did not exist during most of the time that I was writing these personal tools to make my shell life better.
+
+Crystal, however, should make all of this a non-issue.  Rather than depending on Crystal to tell me which shell to branch to, I can simply write everything in Cyrstal, drop it in my `~/bin`, and be done with it, keeping many of the benefits of Ruby while not taking the performance hit of an interpreter starting up every time I issue a command.
+
 
 What's Crystal?
 ---------------
