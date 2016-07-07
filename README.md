@@ -52,15 +52,16 @@ In fact there are no fewer than <del>three</del><ins>four</ins> questions on Sta
     "SpiderMonkey ")+j+" "+v:(t=="undefined"?j+"?":version)+"\n");if(s)build();/*
     :FIN } *///'''
 
-But what if they wanted to change their code to give less information (as it gives not just the shell name but also the shell version), or more information?  That's not a change the *I* would want to undertake.
+But what if they wanted to change their code to give less information (as it gives not just the shell name but also the shell version), or more information?  That's not a change that *I* would want to undertake.
 
 A Better (Simpler) Way?
 -----------------------
 Is it possible to claw your way out of the quicksand through some means other than the sort of code we see above?  Or to avoid the quicksand in the first place?  I think there is.
 
-Despite the convoluted and complex set of differences between the shells, which creates this quicksand, there is one thing which all shells have in common, as far as I know.  It may seem obvious once it is pointed out, but before that searching for something that all shells do in the same way seems futile.  In fact, once pointed out, it seems like cheating.  The one thing they have in common is this: they're very good at calling external programs.  *That* is the key to the solution.  Because you can't count on enough consistency between the many shells, you need to put your logic into an external program.  That's what I've written for you.
+Despite the convoluted and complex set of differences between the shells, which creates this quicksand, there is one thing which all shells have in common, as far as I know.  It may seem obvious once it is pointed out, but before that searching for something that all shells do in the same way seems futile.  In fact, once pointed out, it seems like cheating.  The one thing they have in common is this: how they call external programs.  *That* is the key to the solution.  Because you can't count on enough consistency between the many shells, you need to put your logic into an external program.  That's what I've written for you.
 
-Even the mind-bogglingly complex code above shares this key insight that you must rely on some utility *outside of the shell* to figure out which shell is being used.  The main difference, however, is that they rely on whatever outside (non-shell) interpreters are already available on the machine, and keep cleverly falling back on a different one if the first (or second or third or fourth) fails.  This is presumably since it normally requires root access to install such interpreters.  In contrast I use a utility that is not an interpreter and does not require root access to be added to your machine&mdash;you just drop it in your `~/bin` directory, or anywhere else you prefer.
+Even the mind-bogglingly complex code above shares this key insight that you must rely on some utility *outside of the shell* to figure out which shell is being used.  The main difference, however, is that it relies on whatever outside (non-shell) interpreters are already available on the machine, and keeps cleverly falling back on a different one if the first (or second or third or fourth) fails.  This is presumably since it normally requires root access to install such interpreters.  In contrast I use a utility that does not depend on an interpreter and does not require root access to be added to your machine&mdash;you just drop it in your `~/bin` directory, or anywhere else you prefer.  
+
 
 Postmodern Coding
 -----------------
@@ -73,7 +74,7 @@ In fact it may turn out to be easier to have one file for the function for bourn
 
 Testing
 -------
-You can test that everything is working as it should, one shell at a time, e.g.
+You can test that everything is working as it should, either doing it one shell at a time:
 
     test/test.bash
 
