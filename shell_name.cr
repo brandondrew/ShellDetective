@@ -11,7 +11,7 @@
 # when compiled, Process.ppid seems to give the correct process ID
 # when run in the "interpreted" fashion, it is unreliable.
 
-class ShellDetector
+class ShellDetective
 
   def name_from_process
     # we get the shell process ID from outside of the shell
@@ -36,7 +36,7 @@ class ShellDetector
 
 end
 
-shell = ShellDetector.new
+shell = ShellDetective.new
 puts shell.name_from_process
 
 #### this is currently very simple but could have a lot of things
