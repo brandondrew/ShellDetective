@@ -1,4 +1,4 @@
-Shell Detection
+Shell Detective
 ===============
 
 The Problem
